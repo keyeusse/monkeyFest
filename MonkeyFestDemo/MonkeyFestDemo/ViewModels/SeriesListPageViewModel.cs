@@ -1,4 +1,5 @@
-﻿using MonkeyFestDemo.Models;
+﻿using Microsoft.AppCenter.Analytics;
+using MonkeyFestDemo.Models;
 using MonkeyFestDemo.Services;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -64,7 +65,9 @@ namespace MonkeyFestDemo.ViewModels
             {
                 SeriesList.Add(item);
             }
-            //TODO: Track Event with App Center
+            Analytics.TrackEvent("List of series fetched from internet");
+
+
         }
     }
 }
